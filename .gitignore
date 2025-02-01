@@ -1,0 +1,7 @@
+rag
+knowledge_base
+user_logs.db
+.env
+node_modules
+__pycache__
+npm-debug.log
