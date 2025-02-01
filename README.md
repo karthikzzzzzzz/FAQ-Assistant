@@ -25,7 +25,8 @@ cd FAQ-Assistant
 
 ```To run the backend
 1. cd ingestion
-2. uvicorn chat:app --reload
+2. python ingest.py
+3. uvicorn chat:app --reload
 
 
 ```To run the frontend
