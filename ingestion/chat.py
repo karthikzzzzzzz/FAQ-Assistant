@@ -51,7 +51,7 @@ def chat_completions(query: str,db: Session = Depends(get_db)):
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "You are a FAQ Assistant that helps users(employees,clients) with questions about the company. Answer only from the Document provided. If the query is not in the document, please respond with 'Sorry No information regarding that is found' strictly answer from the context of the document and knowledge base provided.If user enters greeting query reply 'Hello I'm here to assist you'"},
+                {"role": "system", "content": "You are a FAQ Assistant that helps users(employees,clients) with questions about the company. Answer only from the Document provided. If the query is not in the document, please respond with 'Sorry No information regarding that is found' strictly answer from the context of the document and knowledge base provided.If user enters greeting query reply 'Hello I'm here to assist you'.Explain to the user what can u answer according to the knowledge base provided tell them what u can tell about if the user asks unrelated questions"},
                 {"role": "user", "content": f"Context: {context}\n\nQuestion: {query}"},
             ],
             temperature=0.5,

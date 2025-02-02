@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 const Ragbot = () => {
+ 
   const [query, setQuery] = useState("");
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -16,11 +17,12 @@ const Ragbot = () => {
   
     try {
       setIsLoading(true);
-      const response = await fetch(`http://backend:8000/chat-completions?query=${query}`, {
+      const response = await fetch(`/api/chat-completions?query=${query}`, {
         method: "POST",
       });
-  
+      
       let result = await response.text(); 
+      console.log(result)
       if (result.startsWith('"') && result.endsWith('"')) {
         result = result.slice(1, -1); 
       }

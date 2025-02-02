@@ -1,5 +1,5 @@
-
 services:
+
   backend:
     build:
       context: ./ingestion
@@ -7,25 +7,33 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - OPEN_AI_KEY=${OPEN_AI_KEY}  
-    env_file: 
-      - .env 
+      - OPEN_AI_KEY=${OPEN_AI_KEY}
+    env_file:
+      - .env
     volumes:
-      - ./backend:/app              # Mount backend directory
-      - ./knowledge_base:/app/knowledge_base  # Persist ChromaDB data
-      - ./db:/app/db  
-      - ./ingestion:/app              # Persist SQLite database in ./db folder
-    
+      - ./backend:/app
+      - ./knowledge_base:/app/knowledge_base
+      - ./db:/app/db
+      - ./ingestion:/app
+    networks:
+      - faq-assistant-net
 
   frontend:
     build:
       context: ./frontend
-      dockerfile: src/Dockerfile  # Correct this line
+      dockerfile: src/Dockerfile
     ports:
       - "3000:3000"
     volumes:
       - ./frontend:/app
     depends_on:
       - backend
+    env_file:
+      - .env 
+    networks:
+      - faq-assistant-net
 
+networks:
+  faq-assistant-net:
+    driver: bridge
 

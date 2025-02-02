@@ -12,7 +12,10 @@ COPY package-lock.json /app/package-lock.json
 RUN npm install
 
 # Copy the rest of the application files (including your src folder) into the container
-COPY ./src /app/src
+COPY . /app
+
+# Run the build command
+RUN npm run build
 
 # Expose the port for the frontend service
 EXPOSE 3000
