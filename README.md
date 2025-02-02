@@ -35,4 +35,5 @@ cd FAQ-Assistant
 
 ```To run the frontend
 1. cd frontend
-2. npm start
+2. npm install
+3. npm start
