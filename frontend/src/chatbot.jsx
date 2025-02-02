@@ -16,7 +16,7 @@ const Ragbot = () => {
   
     try {
       setIsLoading(true);
-      const response = await fetch(`http://127.0.0.1:8000/chat-completions?query=${query}`, {
+      const response = await fetch(`http://backend:8000/chat-completions?query=${query}`, {
         method: "POST",
       });
   

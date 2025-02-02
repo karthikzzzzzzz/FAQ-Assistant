@@ -1,0 +1,31 @@
+
+services:
+  backend:
+    build:
+      context: ./ingestion
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - OPEN_AI_KEY=${OPEN_AI_KEY}  
+    env_file: 
+      - .env 
+    volumes:
+      - ./backend:/app              # Mount backend directory
+      - ./knowledge_base:/app/knowledge_base  # Persist ChromaDB data
+      - ./db:/app/db  
+      - ./ingestion:/app              # Persist SQLite database in ./db folder
+    
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: src/Dockerfile  # Correct this line
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend
+
+

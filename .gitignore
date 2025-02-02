@@ -5,3 +5,4 @@ user_logs.db
 node_modules
 __pycache__
 npm-debug.log
+.dockerignore
