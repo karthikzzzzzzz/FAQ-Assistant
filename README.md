@@ -13,6 +13,10 @@ FAQ Assistant is an intelligent system designed to assist with handling frequent
 
 Follow the steps below to install and run the FAQ Assistant:
 
+## Install the requirements.txt file with creating an env in your local with following commands
+1. python -m venv venv_name
+2. pip install requirements.txt
+
 ### Clone the repository
 
 ```bash
