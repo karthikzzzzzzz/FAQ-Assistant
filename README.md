@@ -2,6 +2,10 @@
 
 FAQ Assistant is an intelligent system designed to assist with handling frequently asked questions (FAQ). The assistant utilizes natural language processing (NLP) techniques to provide users with accurate and relevant answers to their queries.
 
+
+<img width="595" alt="Screenshot 2025-02-21 at 7 30 24 PM" src="https://github.com/user-attachments/assets/e8c60e63-3445-4255-b521-eaf003d813ed" />
+
+
 ## Features
 
 - Provide automatic responses to frequently asked questions
